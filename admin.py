@@ -39,10 +39,10 @@ class CFCommentsAdmin(CommentsAdmin):
         def get_comment_details(comment):
             "Constructs dictionary of comment details to be reported."
             return {
-                'a': obj.name,
-                'am': obj.user_email,
-                'ip': obj.ip_address,
-                'con': obj.comment[:100]
+                'a': comment.name,
+                'am': comment.user_email,
+                'ip': comment.ip_address,
+                'con': comment.comment[:100]
                 }
         
         def report_spam_incident(comment_info):
