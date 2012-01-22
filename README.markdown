@@ -8,8 +8,8 @@ This package makes it easy for [Django](https://www.djangoproject.com/) sites ru
 
 Two modules are included:
 
-* *middleware*: adjusts the request metadata so Django uses the end-user's IP address and not CloudFlare's
-* *admin*: adds a _Report spam to CloudFlare_ action to the Django Administration Interface for Comments
+* **middleware**: adjusts the request metadata so Django uses the end-user's IP address and not CloudFlare's
+* **admin**: adds a *Report spam to CloudFlare* action to the Django Administration Interface for Comments
 
 ## Installation
 
@@ -31,7 +31,7 @@ Adjust your project's `settings.py` as follows:
             'django.contrib.admin',
             'django.contrib.comments',
             # ...
-            'yourproject.cloudflare' # <- This is it!>
+            'yourproject.cloudflare' # <- This is it!
         )
 
 3. Add your CloudFlare account credentials
@@ -46,6 +46,6 @@ Adjust your project's `settings.py` as follows:
 
 1. Review comments in the Django Admin Interface.
 2. Checkmark the ones you want to report to CloudFlare.
-3. Select the *Report spam to CloudFlare* action and click *Go*.
+3. Select the **Report spam to CloudFlare** action and click **Go**.
 4. If successful, a message will flash indicating which comments have been reported (by ID).
 5. You can then proceed to delete or remove these using the standard comments actions.
