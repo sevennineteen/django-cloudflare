@@ -2,7 +2,7 @@
 
 ## Overview
 
-This package makes it easy for Django sites running behind [CloudFlare](https://www.cloudflare.com/) to report spam comments through the Django Admin Interface.
+This package makes it easy for [Django](https://www.djangoproject.com/) sites running behind [CloudFlare](https://www.cloudflare.com/) to report spam comments through the Django Admin Interface.
 
 >> This has only been tested with the standard [Django comments framework](https://docs.djangoproject.com/en/dev/ref/contrib/comments/).
 
@@ -19,26 +19,26 @@ Adjust your project's `settings.py` as follows:
 
 1. Add the middleware to `MIDDLEWARE_CLASSES`:
     
-    MIDDLEWARE_CLASSES = (
-        'django.middleware.common.CommonMiddleware',
-        # ...
-        'yourproject.cloudflare.middleware.CFMiddleware', # <- This is it!
-    )
+        MIDDLEWARE_CLASSES = (
+            'django.middleware.common.CommonMiddleware',
+            # ...
+            'yourproject.cloudflare.middleware.CFMiddleware', # <- This is it!
+        )
 
 2. Add `cloudflare` to your `INSTALLED_APPS`:
     
-    INSTALLED_APPS = (
-        'django.contrib.admin',
-        'django.contrib.comments',
-        # ...
-        'yourproject.cloudflare' # <- This is it!>
-    )
+        INSTALLED_APPS = (
+            'django.contrib.admin',
+            'django.contrib.comments',
+            # ...
+            'yourproject.cloudflare' # <- This is it!>
+        )
 
 3. Add your CloudFlare account credentials
     
-    # CloudFlare credentials for reporting spam
-    CLOUDFLARE_API_KEY = '08c64e15db52f0e9b4fe3418e44c0b4c6dbba9334'
-    CLOUDFLARE_EMAIL = 'you@example.com'
+        # CloudFlare credentials for reporting spam
+        CLOUDFLARE_API_KEY = '08c64e15db52f0e9b4fe3418e44c0b4c6dbba9334'
+        CLOUDFLARE_EMAIL = 'you@example.com'
 
 >> I'm also assuming you have a logger configured at the project level and am hooking into that.
 
